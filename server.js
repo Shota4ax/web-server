@@ -12,7 +12,7 @@ var middleware = {
         next();
     },
     logger: function(req,res,next){
-        console.log(req.method+' '+req.originalUrl+' :' +new Date().toString());
+        console.log(req.method+' '+req.originalUrl+' :' +new Date()j.toString());
         next();//идем дальше
     }
 }
@@ -22,7 +22,7 @@ var middleware = {
 app.use(middleware.logger);
 
 app.get('/about',middleware.requireAuthentication, function(req,res){
-   res.send('About us'); 
+   res.send('About us!'); 
 });
 
 
