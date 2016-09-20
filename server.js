@@ -5,18 +5,7 @@ var app = express();
 var PORT = 3000;
 //request what user send (json, cookie, data) and response what we send to user
 
-
-var middleware = {
-    requireAuthentication: function(req,res,next){
-        console.log('private route hit');
-        next();
-    },
-    logger: function(req,res,next){
-        console.log(req.method+' '+req.originalUrl+' :' +new Date()j.toString());
-        next();//идем дальше
-    }
-}
-
+var middleware = require('./middleware.js');
 
 
 app.use(middleware.logger);
